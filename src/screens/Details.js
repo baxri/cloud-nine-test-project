@@ -23,7 +23,7 @@ export default function Details() {
   useEffect(() => {
     const d = data.find((x) => x.id === parseInt(id));
     setItem(d);
-  }, []);
+  }, [id]);
 
   if (!item) {
     return null;
