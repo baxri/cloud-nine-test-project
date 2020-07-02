@@ -53,6 +53,7 @@ export default function Details() {
           <Title>{title}</Title>
           <Rating detailed={true} rating={rating} />
         </HeaderBottom>
+        <HeaderGradient />
       </Header>
       <TabContainer>
         <TabButton title="Info" active />
@@ -125,6 +126,20 @@ const Header = styled.div`
   background-size: 100% auto;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
+`;
+
+const HeaderGradient = styled.div`
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  bottom: 0px;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9248074229691877) 0%,
+    rgba(0, 0, 0, 0.00043767507002800965) 42%,
+    rgba(0, 0, 0, 0) 100%
+  );
 `;
 
 const HeaderTop = styled.div`
@@ -134,6 +149,7 @@ const HeaderTop = styled.div`
   padding-top: 12px;
   padding-left: 10px;
   padding-right: 10px;
+  z-index: 1000;
 `;
 
 const HeaderBottom = styled.div`
@@ -143,4 +159,5 @@ const HeaderBottom = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding-left: 15px;
+  z-index: 1000;
 `;
